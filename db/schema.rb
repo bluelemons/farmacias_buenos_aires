@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(version: 20140530195326) do
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "location_id_id"
+    t.integer  "location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "places", ["location_id_id"], name: "index_places_on_location_id_id"
+  add_index "places", ["location_id"], name: "index_places_on_location_id"
 
 end
