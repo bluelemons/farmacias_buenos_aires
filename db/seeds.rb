@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Location.create address: "Buenos Aires, Argentina"
+
 CSV.foreach(Rails.root.join "db/csv/farmacias.csv") do |row|
   puts Place.create address: "#{ row[4] }, #{ row[0] }, Argentina", location: Location.first
 end
