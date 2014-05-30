@@ -8,7 +8,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body data-lat="<%= @location.try :latitude %>", data-lng="<%= @location.try :longitude %>">
+<body data-lat="<%= @location.try :latitude %>", data-lng="<%= @location.try :longitude %>" data-location_id="<%= @location.try :id %>">
 
 <%= yield %>
 
