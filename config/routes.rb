@@ -1,5 +1,8 @@
 FarmaciasBuenosAires::Application.routes.draw do
-  resources :locations
+
+  resources :locations do
+    resources :places
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
