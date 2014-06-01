@@ -14,11 +14,11 @@ location = Location.where(address: "Buenos Aires, Argentina").first_or_create!
   puts network.inspect
 
   CSV.foreach(Rails.root.join "db/csv/#{name}.csv") do |row|
-    Place.where(address: "#{ row[4] }, Buenos Aires, Argentina").first_or_create! do |place|
-      place.location = location
-      place.network  = network
-    end
-    print '·'
+    place = Place.where(address: "#{ row[4] }, Buenos Aires, Argentina").first_or_create!
+    place.location = location
+    place.network  = network
+    place.name     = row[3]
+    place.save! and print '·'
   end
 
   puts ''

@@ -1,7 +1,7 @@
 class Place < ActiveRecord::Base
 
   geocoded_by :address
-  after_validation :geocode
+  after_create :geocode
 
   belongs_to :location
   belongs_to :network
