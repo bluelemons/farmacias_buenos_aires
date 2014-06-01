@@ -6,12 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Location.create address: "Buenos Aires, Argentina"
+location = Location.where(address: "Buenos Aires, Argentina").first_or_create!
 
-CSV.foreach(Rails.root.join "db/csv/farmacias.csv") do |row|
-  puts Place.create address: "#{ row[4] }, #{ row[0] }, Argentina", location: Location.first
-end
+['fefara', 'compania'].each do |name|
+  network = Network.where(name: name).first_or_create!
 
-['fefara', 'compañia'].each do |name|
-  puts Network.where(name: name).first_or_create!.inspect
+  puts network.inspect
+
+  CSV.foreach(Rails.root.join "db/csv/#{name}.csv") do |row|
+    Place.where(address: "#{ row[4] }, Buenos Aires, Argentina").first_or_create! do |place|
+      place.location = location
+      place.network  = network
+    end
+    print '·'
+  end
+
+  puts ''
 end
