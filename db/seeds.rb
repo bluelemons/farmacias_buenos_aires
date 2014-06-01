@@ -11,3 +11,7 @@ Location.create address: "Buenos Aires, Argentina"
 CSV.foreach(Rails.root.join "db/csv/farmacias.csv") do |row|
   puts Place.create address: "#{ row[4] }, #{ row[0] }, Argentina", location: Location.first
 end
+
+['fefara', 'compañia'].each do |name|
+  puts Network.where(name: name).first_or_create!.inspect
+end
