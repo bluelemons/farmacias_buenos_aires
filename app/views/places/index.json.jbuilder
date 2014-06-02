@@ -3,7 +3,7 @@ json.array!(@places) do |place|
 
   json.infowindow place.name
   json.picture({
-    url: asset_path("/icon_#{ place.network.name }.png"),
+    url: "/icon_#{ place.network.name }.png",
     width: 32,
     height: 37
   })
