@@ -22,7 +22,6 @@ location.save!
     place.name     = row[3]
     place.geocode_with_bounds
     place.save! and print '·'
-    sleep 1
   end
 
   puts ''
