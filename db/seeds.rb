@@ -7,6 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 location = Location.where(address: "Buenos Aires, Argentina").first_or_create!
+location.geocode
+location.save!
 
 ['fefara', 'compania'].each do |name|
   network = Network.where(name: name).first_or_create!
@@ -18,7 +20,9 @@ location = Location.where(address: "Buenos Aires, Argentina").first_or_create!
     place.location = location
     place.network  = network
     place.name     = row[3]
+    place.geocode_with_bounds
     place.save! and print '·'
+    sleep 1
   end
 
   puts ''

@@ -1,7 +1,6 @@
 class Place < ActiveRecord::Base
 
   geocoded_by :address
-  after_create :geocode
 
   belongs_to :location
   belongs_to :network
@@ -12,6 +11,15 @@ class Place < ActiveRecord::Base
 
   def lng
     longitude
+  end
+
+  def geocode_with_bounds
+    results = Geocoder.search address, bounds: location.bounds
+    if result = results.first
+      self.latitude  = result.latitude
+      self.longitude = result.longitude
+      result.coordinates
+    end
   end
 
 end
