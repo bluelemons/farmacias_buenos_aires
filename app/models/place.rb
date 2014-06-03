@@ -20,7 +20,7 @@ class Place < ActiveRecord::Base
     if result = results.first
       self.latitude  = result.latitude
       self.longitude = result.longitude
-      sleep 1
+      sleep 0.5
       result.coordinates
     end
   end
