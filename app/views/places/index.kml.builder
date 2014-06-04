@@ -30,7 +30,7 @@ xml.kml xmlns: 'http://www.opengis.net/kml/2.2' do
             xml.styleUrl "##{ network.name }"
             xml.description place.address
             xml.Point do
-              xml.coordinates "#{ place.lat },#{ place.lng}"
+              xml.coordinates "#{ place.lng },#{ place.lat }"
             end
           end
         end
