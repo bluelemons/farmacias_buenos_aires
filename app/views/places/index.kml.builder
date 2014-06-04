@@ -2,6 +2,9 @@ xml.instruct!
 xml.kml xmlns: 'http://www.opengis.net/kml/2.2' do
   xml.Document do
 
+    xml.name "Red de farmacias"
+    xml.description "Red de farmacias"
+
     xml.Style id: 'fefara' do
       xml.IconStyle do
         xml.Icon do
