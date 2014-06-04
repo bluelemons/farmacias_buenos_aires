@@ -8,7 +8,7 @@ xml.kml xmlns: 'http://www.opengis.net/kml/2.2' do
     xml.Style id: 'fefara' do
       xml.IconStyle do
         xml.Icon do
-          xml.href "http://mapicons.nicolasmollet.com/wp-content/uploads/mapicons/shape-default/color-f34648/shapecolor-color/shadow-1/border-dark/symbolstyle-contrast/symbolshadowstyle-dark/gradient-iphone/firstaid.png"
+          xml.href "http://farmacias-buenos-aires.herokuapp.com/icon_fefara.png"
         end
       end
     end
@@ -16,7 +16,7 @@ xml.kml xmlns: 'http://www.opengis.net/kml/2.2' do
     xml.Style id: 'compania' do
       xml.IconStyle do
         xml.Icon do
-          xml.href "http://mapicons.nicolasmollet.com/wp-content/uploads/mapicons/shape-default/color-3875d7/shapecolor-color/shadow-1/border-dark/symbolstyle-contrast/symbolshadowstyle-dark/gradient-iphone/firstaid.png"
+          xml.href "http://farmacias-buenos-aires.herokuapp.com/icon_compania.png"
         end
       end
     end
