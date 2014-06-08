@@ -5,18 +5,12 @@ xml.kml xmlns: 'http://www.opengis.net/kml/2.2' do
     xml.name "Red de farmacias"
     xml.description "Red de farmacias"
 
-    xml.Style id: 'fefara' do
-      xml.IconStyle do
-        xml.Icon do
-          xml.href "http://farmacias-buenos-aires.herokuapp.com/icon_fefara.png"
-        end
-      end
-    end
-
-    xml.Style id: 'compania' do
-      xml.IconStyle do
-        xml.Icon do
-          xml.href "http://farmacias-buenos-aires.herokuapp.com/icon_compania.png"
+    @networks.each do |network|
+      xml.Style id: network.name do
+        xml.IconStyle do
+          xml.Icon do
+            xml.href "http://farmacias-buenos-aires.herokuapp.com/icon_#{ network.name }.png"
+          end
         end
       end
     end
