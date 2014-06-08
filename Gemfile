@@ -6,6 +6,7 @@ gem 'rails', '4.0.3'
 # Use sqlite3 as the database for Active Record
 group :development do
   gem 'sqlite3'
+  gem 'pry'
 end
 
 group :production do
@@ -52,4 +53,4 @@ end
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'underscore-rails'
-gem 'pry'
+gem 'thin'
