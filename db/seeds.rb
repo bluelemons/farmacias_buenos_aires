@@ -2,7 +2,7 @@ location = Location.where(address: "Buenos Aires, Argentina").first_or_create!
 location.geocode
 location.save!
 
-['fefara', 'compania'].each do |name|
+['fefara', 'compania', 'asofar', 'farmasur'].each do |name|
   network = Network.where(name: name).first_or_create!
 
   puts network.inspect
